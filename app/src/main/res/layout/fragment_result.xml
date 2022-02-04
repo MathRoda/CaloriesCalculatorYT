@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ResultFragment">
+
+    <data>
+        <variable
+            name="resultFragment"
+            type="com.example.caloriescalc.ResultFragment" />
+
+        <variable
+            name="viewModel"
+            type="com.example.caloriescalc.model.SharedViewModel" />
+    </data>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="120dp"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/yourName"
+                    android:layout_width="wrap_content"
+                    android:text="@{viewModel.gymName + @string/yourName}"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="true"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:layout_marginTop="26dp"
+                    android:id="@+id/quantity_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Maintenance Calories"
+                    android:textAllCaps="true"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:id="@+id/quantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@{viewModel.maintenanceCalories.toString()}"/>
+
+                <View
+                    android:id="@+id/divider1"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp" />
+
+                <TextView
+                    android:id="@+id/shreded_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Shreded calories"
+                    android:textAllCaps="true"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:id="@+id/shreded"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewModel.shrededCalories.toString()}"/>
+
+                <View
+                    android:id="@+id/divider2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp" />
+
+                <TextView
+                    android:id="@+id/bulk_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bulk Calories"
+                    android:textAllCaps="true"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:id="@+id/bulk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewModel.bulkCalories.toString()}"/>
+
+                <View
+                    android:id="@+id/divider3"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</layout>
